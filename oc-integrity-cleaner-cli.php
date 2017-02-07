@@ -13,7 +13,7 @@
  * https://www.sitepoint.com/interactive-cli-password-prompt-in-php/
  * (c) 2009, Troels Knak-Nielsen
  *
- * @version 0.1.0   2017-02-07
+ * @version 0.1.1   2017-02-07
  * @date    2017-02-07
  *
  * @since   0.1.0   2017-02-07
@@ -64,7 +64,7 @@ foreach ($simpleCheckFiles as $fileRelPath)
     SELF_VERBOSE && printf("%s : %s\n", $fileRelPath,
                     $fileExists ? 'OK' : 'FAIL');
 
-    if (!SELF_VERBOSE)
+    if (!$fileExists && !SELF_VERBOSE)
     {
         trigger_error("File not found: {$fileRelPath}");
     }
